@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ============================================================
+    NAVIGATION
+    ============================================================ -->
+    <header class="navbar" role="banner">
+        <div class="container">
+            <a href="#" class="navbar-brand" aria-label="Gallery Home">
+                <i class="fas fa-images" aria-hidden="true"></i>
+                <span>Gallery</span>
+            </a>
+            <div class="nav-actions">
+                <div class="search-wrap" role="search">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <input type="text" id="searchInput" placeholder="Search..." aria-label="Search images" autocomplete="off" />
+                </div>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+                    <i class="fas fa-moon" id="themeIcon" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================================
+    FILTERS
+    ============================================================ -->
+    <section class="filter-section" aria-label="Filter images">
+        <div class="container">
+            <span class="filter-label"><i class="fas fa-tag" aria-hidden="true"></i> Filter:</span>
+            <div id="filterButtons" role="tablist"></div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    GALLERY
+    ============================================================ -->
+    <main class="gallery-section" role="main">
+        <div class="container">
+            <h1 class="gallery-title">Image Gallery</h1>
+            <p class="gallery-subtitle" id="resultCount">Explore beautiful high‑resolution images</p>
+
+            <div class="loader-wrap" id="loaderWrap" aria-hidden="true">
+                <div class="loader" role="status" aria-label="Loading"></div>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid" role="list"></div>
+        </div>
+    </main>
+
+    <!-- ============================================================
+    LIGHTBOX
+    ============================================================ -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+        <button class="close-btn" id="lbClose" aria-label="Close lightbox">
+            <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+        <button class="nav-btn prev" id="lbPrev" aria-label="Previous image">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button class="nav-btn next" id="lbNext" aria-label="Next image">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        </button>
+
+        <div class="lb-content" id="lbContent">
+            <div class="lb-img-wrap">
+                <img id="lbImg" src="" alt="" />
+            </div>
+            <div class="lb-info">
+                <span class="counter" id="lbCounter">1 of 24</span>
+                <div class="title-cap">
+                    <span class="lb-title" id="lbTitle">Title</span>
+                    <span class="lb-caption" id="lbCaption">Caption</span>
+                </div>
+                <div class="lb-actions">
+                    <button id="lbFav" aria-label="Toggle favorite" title="Favorite">
+                        <i class="far fa-heart" aria-hidden="true"></i>
+                    </button>
+                    <button id="lbDownload" aria-label="Download image" title="Download">
+                        <i class="fas fa-download" aria-hidden="true"></i>
+                    </button>
+                    <button id="lbFullscreen" aria-label="Toggle fullscreen" title="Fullscreen">
+                        <i class="fas fa-expand" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+    SCROLL TO TOP
+    ============================================================ -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top" title="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p>&copy; 2026 Image Gallery &bull;</p>
+            <div class="socials">
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
